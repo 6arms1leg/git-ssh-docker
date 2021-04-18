@@ -1,0 +1,8 @@
+*
+
+!/git-shell-commands
+!/Dockerfile
+!/.dockerignore
+!/fix-repos.sh
+!/sshd_config
+!/start.sh

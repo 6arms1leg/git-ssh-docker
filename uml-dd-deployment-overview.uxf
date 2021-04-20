@@ -4,10 +4,10 @@
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>441</x>
-      <y>198</y>
-      <w>216</w>
-      <h>135</h>
+      <x>396</x>
+      <y>243</y>
+      <w>225</w>
+      <h>342</h>
     </coordinates>
     <panel_attributes>&lt;&lt;execution environment&gt;&gt;
 *Git-SSH*
@@ -22,8 +22,8 @@
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>171</x>
-      <y>243</y>
+      <x>144</x>
+      <y>261</y>
       <w>162</w>
       <h>63</h>
     </coordinates>
@@ -35,20 +35,20 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>270</y>
-      <w>135</w>
+      <x>297</x>
+      <y>252</y>
+      <w>117</w>
       <h>63</h>
     </coordinates>
     <panel_attributes>lt=-
-m1=SSH\nvia\n${PORT}</panel_attributes>
-    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+r1=SSH\nvia\n${PORT}</panel_attributes>
+    <additional_attributes>10.0;50.0;110.0;50.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>225</x>
-      <y>342</y>
+      <x>801</x>
+      <y>531</y>
       <w>108</w>
       <h>36</h>
     </coordinates>
@@ -59,19 +59,19 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>360</y>
-      <w>171</w>
-      <h>108</h>
+      <x>720</x>
+      <y>495</y>
+      <w>99</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>170.0;100.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>387</x>
-      <y>81</y>
+      <x>441</x>
+      <y>126</y>
       <w>63</w>
       <h>27</h>
     </coordinates>
@@ -84,9 +84,9 @@ layer=1</panel_attributes>
     <id>UMLFrame</id>
     <coordinates>
       <x>126</x>
-      <y>36</y>
-      <w>828</w>
-      <h>621</h>
+      <y>108</y>
+      <w>864</w>
+      <h>513</h>
     </coordinates>
     <panel_attributes>dd Deployment Overview
 Git-SSH (Docker)
@@ -96,8 +96,8 @@ fontsize=30</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>693</x>
-      <y>189</y>
+      <x>414</x>
+      <y>387</y>
       <w>180</w>
       <h>81</h>
     </coordinates>
@@ -108,23 +108,12 @@ fontsize=30</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>648</x>
-      <y>225</y>
-      <w>63</w>
-      <h>27</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>405</x>
-      <y>144</y>
-      <w>513</w>
-      <h>477</h>
+      <x>378</x>
+      <y>189</y>
+      <w>594</w>
+      <h>414</h>
     </coordinates>
     <panel_attributes>&lt;&lt;device&gt;&gt;
 *Host Maschine*</panel_attributes>
@@ -133,10 +122,10 @@ fontsize=30</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>207</x>
-      <y>144</y>
+      <x>180</x>
+      <y>189</y>
       <w>162</w>
-      <h>63</h>
+      <h>54</h>
     </coordinates>
     <panel_attributes>&lt;&lt;device&gt;&gt;
 *Client Maschine (Admin)*</panel_attributes>
@@ -145,8 +134,8 @@ fontsize=30</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>162</y>
+      <x>333</x>
+      <y>198</y>
       <w>63</w>
       <h>36</h>
     </coordinates>
@@ -157,21 +146,21 @@ SSH</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>441</x>
-      <y>369</y>
-      <w>171</w>
-      <h>216</h>
+      <x>639</x>
+      <y>333</y>
+      <w>144</w>
+      <h>207</h>
     </coordinates>
     <panel_attributes>&lt;&lt;component&gt;&gt;
 *Data*
-{FS type = Docker Volume}</panel_attributes>
+*Docker Volume*</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>477</x>
-      <y>486</y>
+      <x>657</x>
+      <y>396</y>
       <w>99</w>
       <h>36</h>
     </coordinates>
@@ -182,8 +171,8 @@ SSH</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>477</x>
-      <y>531</y>
+      <x>657</x>
+      <y>441</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -194,8 +183,8 @@ SSH</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>477</x>
-      <y>432</y>
+      <x>657</x>
+      <y>486</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -206,19 +195,19 @@ SSH</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>522</x>
-      <y>324</y>
-      <w>27</w>
-      <h>63</h>
+      <x>612</x>
+      <y>351</y>
+      <w>45</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>30.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>648</x>
-      <y>387</y>
+      <x>414</x>
+      <y>486</y>
       <w>162</w>
       <h>81</h>
     </coordinates>
@@ -229,46 +218,35 @@ SSH</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>648</x>
-      <y>297</y>
-      <w>63</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>50.0;100.0;50.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>504</x>
-      <y>72</y>
-      <w>72</w>
-      <h>36</h>
+      <x>198</x>
+      <y>342</y>
+      <w>153</w>
+      <h>27</h>
     </coordinates>
-    <panel_attributes>Key auth. only
+    <panel_attributes>Key authentication only
 style=wordwrap</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>378</x>
-      <y>81</y>
-      <w>144</w>
-      <h>216</h>
+      <x>324</x>
+      <y>288</y>
+      <w>45</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;220.0;140.0;10.0</additional_attributes>
+    <additional_attributes>30.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>612</x>
-      <y>72</y>
-      <w>216</w>
-      <h>36</h>
+      <x>180</x>
+      <y>387</y>
+      <w>153</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>UID/GID of `git` user inside Docker container mapped to user of host
 style=wordwrap</panel_attributes>
@@ -277,32 +255,98 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>621</x>
-      <y>99</y>
-      <w>36</w>
-      <h>63</h>
+      <x>720</x>
+      <y>450</y>
+      <w>99</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;20.0;50.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>558</x>
-      <y>99</y>
-      <w>90</w>
-      <h>117</h>
+      <x>747</x>
+      <y>369</y>
+      <w>72</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;50.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>567</x>
+      <y>495</y>
+      <w>108</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>432</y>
+      <w>90</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;30.0;80.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>585</x>
+      <y>405</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>360</y>
+      <w>72</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;60.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>387</y>
+      <w>90</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;30.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>405</y>
+      <w>108</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;30.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>162</x>
-      <y>522</y>
-      <w>207</w>
-      <h>72</h>
+      <x>801</x>
+      <y>414</y>
+      <w>144</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>Contains public keys of allowed clients
 (copied in `authorized_keys` file if present at Docker container start)
@@ -310,82 +354,16 @@ style=wordwrap</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>360</x>
-      <y>540</y>
-      <w>135</w>
-      <h>45</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;30.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>207</x>
-      <y>414</y>
-      <w>162</w>
-      <h>72</h>
+      <x>801</x>
+      <y>315</y>
+      <w>126</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>Contains SSH host authentication keys
 (generated if not present at Docker container start)
 style=wordwrap</panel_attributes>
     <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>360</x>
-      <y>459</y>
-      <w>135</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>130.0;50.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>540</x>
-      <y>441</y>
-      <w>126</w>
-      <h>27</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>540</x>
-      <y>261</y>
-      <w>324</w>
-      <h>306</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>340.0;10.0;340.0;320.0;10.0;320.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>567</x>
-      <y>261</y>
-      <w>297</w>
-      <h>261</h>
-    </coordinates>
-    <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>310.0;10.0;310.0;270.0;10.0;270.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>729</x>
-      <y>99</y>
-      <w>45</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;30.0;100.0</additional_attributes>
   </element>
 </diagram>

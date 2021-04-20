@@ -19,18 +19,18 @@ The UML deployment diagram in the figure below gives an overview.
 > * Host - Host machine that runs the Docker container
 
 > Used variables in this documentation:
-> * BASE_PATH - Path to the directory that contains this project’s files
+> * GITSSH_BASE_PATH - Path to the directory that contains this project’s files
 >   (especially `Dockerfile` + other build-related files and
 >   `docker-compose.yml`)
-> * GID - GID assigned to the `git` user within the Docker container, e.g.
->   `1000`.
+> * GITSSH_GID - GID assigned to the `git` user within the Docker container,
+>   e.g. `1000`.
 >   The access permissions of the Docker volumes content will be set to this
 >   GID.
-> * PORT - Network port used for the Git SSH connection, e.g. `2222`
+> * GITSSH_PORT - Network port used for the Git SSH connection, e.g. `2222`
 > * REPO_NAME - Name of the Git repository
 > * SERVER - Network address (IP/domain name) of the host
-> * UID - UID assigned to the `git` user within the Docker container, e.g.
->   `1000`.
+> * GITSSH_UID - UID assigned to the `git` user within the Docker container,
+>   e.g. `1000`.
 >   The acces spermissions of the Docker volumes content will be set to this
 >   UID.
 > * USER - SSH user used to login to the host
@@ -50,7 +50,7 @@ authentication.
 
 Most of the instructions in this documentation can also be run with the
 provided `Makefile` (which uses Docker-Compose).
-Run `cd ${BASE_PATH} && make help` to see the list of available targets.
+Run `cd ${GITSSH_BASE_PATH} && make help` to see the list of available targets.
 
 > The Makefile uses Docker-Compose, see the prerequisite in "How to run the
 > container with Docker-Compose (on the host)" in the [Run section](#run).
@@ -60,7 +60,7 @@ Run `cd ${BASE_PATH} && make help` to see the list of available targets.
 How to build the Docker image (on the host):
 
 ```sh
-$ cd ${BASE_PATH}
+$ cd ${GITSSH_BASE_PATH}
 $ sudo docker build -t git-ssh:${VERSION} .
 $ sudo docker image tag git-ssh:${VERSION} git-ssh:latest
 ```
@@ -81,16 +81,16 @@ $ sudo docker image tag git-ssh:${VERSION} git-ssh:latest
 How to run the container (on the host):
 
 ```sh
-$ cd ${BASE_PATH}
+$ cd ${GITSSH_BASE_PATH}
 $ mkdir -p ./git-ssh/keys-host/ ./git-ssh/keys/ ./git-ssh/repos/
 $ sudo docker run \
   -d \
-  -p ${PORT}:22 \
-  -v ${BASE_PATH}/git-ssh/keys-host/:/git/keys-host/ \
-  -v ${BASE_PATH}/git-ssh/keys/:/git/keys/ \
-  -v ${BASE_PATH}/git-ssh/repos/:/git/repos/ \
-  -e PUID=${UID} \
-  -e PGID=${GID} \
+  -p ${GITSSH_PORT}:22 \
+  -v ${GITSSH_BASE_PATH}/git-ssh/keys-host/:/git/keys-host/ \
+  -v ${GITSSH_BASE_PATH}/git-ssh/keys/:/git/keys/ \
+  -v ${GITSSH_BASE_PATH}/git-ssh/repos/:/git/repos/ \
+  -e PUID=${GITSSH_UID} \
+  -e PGID=${GITSSH_GID} \
   --name="git-ssh" \
   git-ssh:latest
 ```
@@ -100,8 +100,18 @@ How to run the container with Docker-Compose (on the host):
 Prerequisite:
 Copy `docker-compose.yml.template` to `docker-compose.yml` and adjust it.
 
+> Instead of modifying `docker-compose.yml` after copying it, one can create an
+> `.env` file that provides the necessary variables:
+>
+> ```sh
+> GITSSH_PORT=
+> GITSSH_BASE_PATH=
+> GITSSH_UID=
+> GITSSH_GID=
+> ```
+
 ```sh
-$ cd ${BASE_PATH}
+$ cd ${GITSSH_BASE_PATH}
 $ mkdir -p ./git-ssh/keys-host/ ./git-ssh/keys/ ./git-ssh/repos/
 $ sudo docker-compose up -d
 ```
@@ -125,7 +135,7 @@ How to add a client’s public SSH key to the Git-SSH server:
 Upload the key to the host’s volume mount point (on the client):
 
 ```sh
-$ scp ~/.ssh/id_ecdsa.pub ${USER}@${SERVER}:${BASE_PATH}/git-ssh/keys/
+$ scp ~/.ssh/id_ecdsa.pub ${USER}@${SERVER}:${GITSSH_BASE_PATH}/git-ssh/keys/
 ```
 
 Restart the Docker container (on the host):
@@ -146,7 +156,7 @@ How to
 already):
 
 ```sh
-$ ssh -p ${PORT} git@${SERVER}
+$ ssh -p ${GITSSH_PORT} git@${SERVER}
 
 ~~~ Welcome to Git SSH server! ~~~
 
@@ -167,7 +177,7 @@ $ sudo docker exec -u git git-ssh git init --bare ./repos/${REPO_NAME}.git
 How to clone a repository (on the client):
 
 ```sh
-$ git clone ssh://git@${SERVER}:${PORT}/git/repos/${REPO_NAME}.git
+$ git clone ssh://git@${SERVER}:${GITSSH_PORT}/git/repos/${REPO_NAME}.git
 ```
 
 How to push a (non-bare) repository that (yet) only exists locally (on the
@@ -178,7 +188,8 @@ Prerequisite: Create a new (bare) repository (on the host).
 > See "How to create a new (bare) repository (on the host)".
 
 ```sh
-$ git remote add origin ssh://git@${SERVER}:${PORT}/git/repos/${REPO_NAME}.git
+$ git remote add origin \
+  ssh://git@${SERVER}:${GITSSH_PORT}/git/repos/${REPO_NAME}.git
 $ git push -u origin master
 ```
 
@@ -190,7 +201,8 @@ $ git push -u origin master
 How to upload an existing bare repository (on the client):
 
 ```sh
-$ scp -r /path/to/${REPO_NAME}.git ${USER}@${SERVER}:${BASE_PATH}/git-ssh/repos/
+$ scp -r /path/to/${REPO_NAME}.git \
+  ${USER}@${SERVER}:${GITSSH_BASE_PATH}/git-ssh/repos/
 ```
 
 > Make sure that uploaded bare repositories have the correct access permissions

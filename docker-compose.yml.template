@@ -5,12 +5,12 @@ services:
     container_name: git-ssh
     build: ./
     ports:
-      - "${PORT}:22"
+      - "${GITSSH_PORT}:22"
     volumes:
-      - ${BASE_PATH}/git-ssh/keys-host/:/git/keys-host/
-      - ${BASE_PATH}/git-ssh/keys/:/git/keys/:ro
-      - ${BASE_PATH}/git-ssh/repos/:/git/repos/
+      - ${GITSSH_BASE_PATH}/git-ssh/keys-host/:/git/keys-host/
+      - ${GITSSH_BASE_PATH}/git-ssh/keys/:/git/keys/:ro
+      - ${GITSSH_BASE_PATH}/git-ssh/repos/:/git/repos/
     environment:
-      - PUID=${UID}
-      - PGID=${GID}
+      - PUID=${GITSSH_UID}
+      - PGID=${GITSSH_GID}
     restart: unless-stopped

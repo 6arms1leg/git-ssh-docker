@@ -4,8 +4,8 @@
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>396</x>
-      <y>243</y>
+      <x>405</x>
+      <y>234</y>
       <w>225</w>
       <h>342</h>
     </coordinates>
@@ -20,35 +20,10 @@
     <additional_attributes/>
   </element>
   <element>
-    <id>UMLDeployment</id>
-    <coordinates>
-      <x>144</x>
-      <y>261</y>
-      <w>162</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>&lt;&lt;device&gt;&gt;
-*Client Maschine*
-{number deployed = 1..*}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>297</x>
-      <y>252</y>
-      <w>117</w>
-      <h>63</h>
-    </coordinates>
-    <panel_attributes>lt=-
-r1=SSH\nvia\n${PORT}</panel_attributes>
-    <additional_attributes>10.0;50.0;110.0;50.0</additional_attributes>
-  </element>
-  <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>801</x>
-      <y>531</y>
+      <x>810</x>
+      <y>522</y>
       <w>108</w>
       <h>36</h>
     </coordinates>
@@ -59,8 +34,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>495</y>
+      <x>729</x>
+      <y>486</y>
       <w>99</w>
       <h>72</h>
     </coordinates>
@@ -70,8 +45,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>441</x>
-      <y>126</y>
+      <x>486</x>
+      <y>117</y>
       <w>63</w>
       <h>27</h>
     </coordinates>
@@ -83,9 +58,9 @@ layer=1</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>126</x>
-      <y>108</y>
-      <w>864</w>
+      <x>171</x>
+      <y>99</y>
+      <w>828</w>
       <h>513</h>
     </coordinates>
     <panel_attributes>dd Deployment Overview
@@ -96,8 +71,8 @@ fontsize=30</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>414</x>
-      <y>387</y>
+      <x>423</x>
+      <y>378</y>
       <w>180</w>
       <h>81</h>
     </coordinates>
@@ -110,8 +85,8 @@ fontsize=30</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>378</x>
-      <y>189</y>
+      <x>387</x>
+      <y>180</y>
       <w>594</w>
       <h>414</h>
     </coordinates>
@@ -122,8 +97,8 @@ fontsize=30</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>180</x>
-      <y>189</y>
+      <x>189</x>
+      <y>180</y>
       <w>162</w>
       <h>54</h>
     </coordinates>
@@ -134,8 +109,8 @@ fontsize=30</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>333</x>
-      <y>198</y>
+      <x>342</x>
+      <y>189</y>
       <w>63</w>
       <h>36</h>
     </coordinates>
@@ -146,8 +121,8 @@ SSH</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>639</x>
-      <y>333</y>
+      <x>648</x>
+      <y>324</y>
       <w>144</w>
       <h>207</h>
     </coordinates>
@@ -159,8 +134,8 @@ SSH</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>657</x>
-      <y>396</y>
+      <x>666</x>
+      <y>387</y>
       <w>99</w>
       <h>36</h>
     </coordinates>
@@ -171,8 +146,8 @@ SSH</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>657</x>
-      <y>441</y>
+      <x>666</x>
+      <y>432</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -183,8 +158,8 @@ SSH</panel_attributes>
   <element>
     <id>UMLGeneric</id>
     <coordinates>
-      <x>657</x>
-      <y>486</y>
+      <x>666</x>
+      <y>477</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -195,8 +170,8 @@ SSH</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>612</x>
-      <y>351</y>
+      <x>621</x>
+      <y>342</y>
       <w>45</w>
       <h>27</h>
     </coordinates>
@@ -206,8 +181,8 @@ SSH</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>414</x>
-      <y>486</y>
+      <x>423</x>
+      <y>477</y>
       <w>162</w>
       <h>81</h>
     </coordinates>
@@ -220,8 +195,8 @@ SSH</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>198</x>
-      <y>342</y>
+      <x>216</x>
+      <y>252</y>
       <w>153</w>
       <h>27</h>
     </coordinates>
@@ -232,19 +207,19 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>288</y>
-      <w>45</w>
-      <h>72</h>
+      <x>225</x>
+      <y>270</y>
+      <w>63</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>30.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>50.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>180</x>
-      <y>387</y>
+      <x>216</x>
+      <y>441</y>
       <w>153</w>
       <h>54</h>
     </coordinates>
@@ -255,8 +230,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>720</x>
-      <y>450</y>
+      <x>729</x>
+      <y>441</y>
       <w>99</w>
       <h>36</h>
     </coordinates>
@@ -266,8 +241,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>747</x>
-      <y>369</y>
+      <x>756</x>
+      <y>360</y>
       <w>72</w>
       <h>63</h>
     </coordinates>
@@ -277,8 +252,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>567</x>
-      <y>495</y>
+      <x>576</x>
+      <y>486</y>
       <w>108</w>
       <h>27</h>
     </coordinates>
@@ -288,8 +263,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>432</y>
+      <x>594</x>
+      <y>423</y>
       <w>90</w>
       <h>45</h>
     </coordinates>
@@ -299,8 +274,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>585</x>
-      <y>405</y>
+      <x>594</x>
+      <y>396</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -310,41 +285,41 @@ style=wordwrap</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>360</y>
-      <w>72</w>
-      <h>72</h>
+      <x>360</x>
+      <y>459</y>
+      <w>45</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;60.0;60.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;30.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>387</y>
-      <w>90</w>
-      <h>45</h>
+      <x>360</x>
+      <y>459</y>
+      <w>63</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;30.0;80.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;50.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>324</x>
-      <y>405</y>
-      <w>108</w>
-      <h>45</h>
+      <x>360</x>
+      <y>432</y>
+      <w>81</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;100.0;30.0</additional_attributes>
+    <additional_attributes>10.0;40.0;70.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>801</x>
-      <y>414</y>
+      <x>810</x>
+      <y>405</y>
       <w>144</w>
       <h>99</h>
     </coordinates>
@@ -356,8 +331,8 @@ style=wordwrap</panel_attributes>
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>801</x>
-      <y>315</y>
+      <x>810</x>
+      <y>306</y>
       <w>126</w>
       <h>81</h>
     </coordinates>
@@ -365,5 +340,30 @@ style=wordwrap</panel_attributes>
 (generated if not present at Docker container start)
 style=wordwrap</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>207</x>
+      <y>360</y>
+      <w>162</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;device&gt;&gt;
+*Client Maschine*
+{number deployed = 1..*}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>261</x>
+      <y>288</y>
+      <w>162</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-
+r1=SSH\nvia\n${GITSSH_PORT}</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;50.0;160.0;50.0</additional_attributes>
   </element>
 </diagram>

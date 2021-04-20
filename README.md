@@ -98,7 +98,7 @@ $ sudo docker run \
 How to run the container with Docker-Compose (on the host):
 
 Prerequisite:
-Copy `docker-compose.yml.example` to `docker-compose.yml` and adjust it.
+Copy `docker-compose.yml.template` to `docker-compose.yml` and adjust it.
 
 ```sh
 $ cd ${BASE_PATH}

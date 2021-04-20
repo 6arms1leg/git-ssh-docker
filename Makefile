@@ -45,7 +45,7 @@ prepare-deploy:
 	mkdir -p $(BUILD_CONTEXT)/$(SERVICE)/repos/
 # If `docker-compose.yml` does not exist, copy the template
 ifeq (,$(wildcard $(DOCKERCOMPFILE)))
-	cp $(DOCKERCOMPFILE).example $(DOCKERCOMPFILE)
+	cp $(DOCKERCOMPFILE).template $(DOCKERCOMPFILE)
 endif
 	@echo "Make:  Customize configuration file \`$(DOCKERCOMPFILE)\` and"
 	@echo "Make:      then deploy (using \`make deploy\`)."

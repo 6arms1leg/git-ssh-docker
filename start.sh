@@ -53,4 +53,4 @@ if [ -n "$(ls -A ${PKEYS}/)" ]; then
     chmod -R 600 ${PHOME}/.ssh/*
 fi
 
-${PROG} -D -f ${PCONFIG}
+exec ${PROG} -D -f ${PCONFIG}

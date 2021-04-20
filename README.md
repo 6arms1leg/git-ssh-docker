@@ -15,7 +15,7 @@ The UML deployment diagram in the figure below gives an overview.
 ![UML deployment diagram](./uml-dd-deployment-overview.png "UML deployment diagram")
  
 > Used terminology in this documentation:
-> * Client - client machine that connects to the host
+> * Client - Client machine that connects to the host
 > * Host - Host machine that runs the Docker container
 
 > Used variables in this documentation:

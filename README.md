@@ -59,7 +59,7 @@ Run `cd ${BASE_PATH} && make help` to see the list of available targets.
 
 How to build the Docker image (on the host):
 
-```bash
+```sh
 $ cd ${BASE_PATH}
 $ sudo docker build -t git-ssh:${VERSION} .
 $ sudo docker image tag git-ssh:${VERSION} git-ssh:latest
@@ -80,7 +80,7 @@ $ sudo docker image tag git-ssh:${VERSION} git-ssh:latest
 
 How to run the container (on the host):
 
-```bash
+```sh
 $ cd ${BASE_PATH}
 $ mkdir -p ./git-ssh/keys-host/ ./git-ssh/keys/ ./git-ssh/repos/
 $ sudo docker run \
@@ -100,7 +100,7 @@ How to run the container with Docker-Compose (on the host):
 Prerequisite:
 Copy `docker-compose.yml.example` to `docker-compose.yml` and adjust it.
 
-```bash
+```sh
 $ cd ${BASE_PATH}
 $ mkdir -p ./git-ssh/keys-host/ ./git-ssh/keys/ ./git-ssh/repos/
 $ sudo docker-compose up -d
@@ -113,7 +113,7 @@ $ sudo docker-compose up -d
 How to generate a private/public key pair (on the client; this generates
 stronger keys than the default, RSA):
 
-```bash
+```sh
 $ ssh-keygen -t ecdsa -b 521
 ```
 
@@ -124,13 +124,13 @@ How to add a client’s public SSH key to the Git-SSH server:
 
 Upload the key to the host’s volume mount point (on the client):
 
-```bash
+```sh
 $ scp ~/.ssh/id_ecdsa.pub ${USER}@${SERVER}:${BASE_PATH}/git-ssh/keys/
 ```
 
 Restart the Docker container (on the host):
 
-```bash
+```sh
 $ sudo docker restart git-ssh
 ```
 
@@ -145,7 +145,7 @@ How to
 (on the client; the client’s SSH public key must have been uploaded to the host
 already):
 
-```bash
+```sh
 $ ssh -p ${PORT} git@${SERVER}
 
 ~~~ Welcome to Git SSH server! ~~~
@@ -157,7 +157,7 @@ interactive shell access is not provided.
 
 How to create a new (bare) repository (on the host):
 
-```bash
+```sh
 $ sudo docker exec -u git git-ssh git init --bare ./repos/${REPO_NAME}.git
 ```
 
@@ -166,7 +166,7 @@ $ sudo docker exec -u git git-ssh git init --bare ./repos/${REPO_NAME}.git
 
 How to clone a repository (on the client):
 
-```bash
+```sh
 $ git clone ssh://git@${SERVER}:${PORT}/git/repos/${REPO_NAME}.git
 ```
 
@@ -177,7 +177,7 @@ Prerequisite: Create a new (bare) repository (on the host).
 
 > See "How to create a new (bare) repository (on the host)".
 
-```bash
+```sh
 $ git remote add origin ssh://git@${SERVER}:${PORT}/git/repos/${REPO_NAME}.git
 $ git push -u origin master
 ```
@@ -189,7 +189,7 @@ $ git push -u origin master
 
 How to upload an existing bare repository (on the client):
 
-```bash
+```sh
 $ scp -r /path/to/${REPO_NAME}.git ${USER}@${SERVER}:${BASE_PATH}/git-ssh/repos/
 ```
 
@@ -201,7 +201,7 @@ $ scp -r /path/to/${REPO_NAME}.git ${USER}@${SERVER}:${BASE_PATH}/git-ssh/repos/
 
 How to fix Git repository access permission issues (on the host):
 
-```bash
+```sh
 $ sudo docker exec git-ssh ./fix-repos.sh
 ```
 

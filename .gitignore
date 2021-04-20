@@ -1,6 +1,5 @@
 # Build process files
 /build
-/prepare-deploy
 
 # Deployment data
 /git-ssh/

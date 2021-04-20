@@ -9,8 +9,8 @@ BUILD_CONTEXT := .
 DOCKERFILE := $(BUILD_CONTEXT)/Dockerfile
 DOCKERCOMPFILE := $(BUILD_CONTEXT)/docker-compose.yml
 
-.PHONY: help tag run-shell up start stop down destroy restart ps log \
-	login-shell login-shell-root new-repo fix-repos clean
+.PHONY: help tag prepare-deploy run-shell up start stop down destroy restart \
+	ps log login-shell login-shell-root new-repo fix-repos clean
 
 # Default target
 help:
@@ -21,7 +21,7 @@ help:
        	| sort \
 	| egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
-build: git-shell-commands Dockerfile .dockerignore fix-repos.sh sshd_config \
+build: git-shell-commands $(DOCKERFILE) .dockerignore fix-repos.sh sshd_config \
 	start.sh
 	@echo "Dummy time stamp file for Make to determine when to rebuild" > $@
 	sudo docker build -t $(IMAGE):$(VERSION) $(BUILD_CONTEXT)/ \
@@ -39,8 +39,7 @@ else
 	sudo docker image tag $(IMAGE):latest $(IMAGE):$(t)
 endif
 
-prepare-deploy: build
-	@echo "Dummy time stamp file for Make to determine when to rebuild" > $@
+prepare-deploy:
 	mkdir -p $(BUILD_CONTEXT)/$(SERVICE)/keys-host/
 	mkdir -p $(BUILD_CONTEXT)/$(SERVICE)/keys/
 	mkdir -p $(BUILD_CONTEXT)/$(SERVICE)/repos/
@@ -48,8 +47,8 @@ prepare-deploy: build
 ifeq (,$(wildcard $(DOCKERCOMPFILE)))
 	cp $(DOCKERCOMPFILE).example $(DOCKERCOMPFILE)
 endif
-	@echo "Makefile:  Customize configuration file \`$(DOCKERCOMPFILE)\`"
-	@echo "Makefile:      and then deploy (using \`make deploy\`)."
+	@echo "Make:  Customize configuration file \`$(DOCKERCOMPFILE)\` and"
+	@echo "Make:      then deploy (using \`make deploy\`)."
 
 run-shell:
 	sudo docker-compose run $(SERVICE) ash
@@ -100,9 +99,7 @@ fix-repos:
 	sudo docker-compose -f $(DOCKERCOMPFILE) exec $(SERVICE) ./fix-repos.sh
 
 clean:
-	rm -rf \
-		$(BUILD_CONTEXT)/build \
-		$(BUILD_CONTEXT)/prepare-deploy
+	rm -rf $(BUILD_CONTEXT)/build
 # Confirm before removal since data might be deleted
 	@echo "Make:  !CAUTION!  The following will delete the configuration"
 	@echo "Make:      file \`$(DOCKERCOMPFILE)\` and the directory"

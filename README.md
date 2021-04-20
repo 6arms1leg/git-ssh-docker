@@ -1,4 +1,4 @@
-# Git-SSH
+# Git-SSH (Docker)
 
 A simple Git-over-SSH server Docker image with UID/GID handling, based on
 Alpine Linux.

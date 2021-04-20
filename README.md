@@ -3,6 +3,9 @@
 A simple Git-over-SSH server Docker image with UID/GID handling, based on
 Alpine Linux.
 
+*The [Quickstart section](#quickstart) shows the fastest way to set everything
+up without providing further details.*
+
 Clients (users) can interact with the server using Git after adding their
 public SSH key to the Git-SSH server for authentication.
 Within the Docker container all Git repositries are managed by a single `git`
@@ -37,6 +40,33 @@ The UML deployment diagram in the figure below gives an overview.
 > * VERSION - Version of this project, e.g. `1.0.0`.
 >   Adheres to [Semantic Versioning](https://semver.org).
 
+## Quickstart
+
+**How to** set everything up the fastest way possible:
+
+Step 1 (on the host):
+
+```sh
+$ cd ${GITSSH_BASE_PATH}
+$ make build
+$ make prepare-deploy
+```
+
+... and adjust `docker-compose.yml`.
+
+Step 2 (on the client):
+
+```sh
+$ ssh-keygen -t ed25519
+$ scp ~/.ssh/id_ed25519.pub ${USER}@${SERVER}:${GITSSH_BASE_PATH}/git-ssh/keys/
+```
+
+Step 3 (on the host):
+
+```sh
+$ make deploy
+```
+
 ## Applicability
 
 The main use case for this project is to provide a very simple but secure^1
@@ -57,7 +87,7 @@ Run `cd ${GITSSH_BASE_PATH} && make help` to see the list of available targets.
 
 ## Build
 
-How to build the Docker image (on the host):
+**How to** build the Docker image (on the host):
 
 ```sh
 $ cd ${GITSSH_BASE_PATH}
@@ -78,7 +108,7 @@ $ sudo docker image tag git-ssh:${VERSION} git-ssh:latest
 
 ## Run
 
-How to run the container (on the host):
+**How to** run the container (on the host):
 
 ```sh
 $ cd ${GITSSH_BASE_PATH}
@@ -95,7 +125,7 @@ $ sudo docker run \
   git-ssh:latest
 ```
 
-How to run the container with Docker-Compose (on the host):
+**How to** run the container with Docker-Compose (on the host):
 
 Prerequisite:
 Copy `docker-compose.yml.template` to `docker-compose.yml` and adjust it.
@@ -120,7 +150,7 @@ $ sudo docker-compose up -d
 
 > Based on [this reference](https://www.ssh.com/ssh/keygen/).
 
-How to generate a private/public key pair (on the client; this generates
+**How to** generate a private/public key pair (on the client; this generates
 stronger keys than the default, RSA):
 
 ```sh
@@ -130,7 +160,7 @@ $ ssh-keygen -t ecdsa -b 521
 > Or if supported by the client:
 > `ssh-keygen -t ed25519`
 
-How to add a client’s public SSH key to the Git-SSH server:
+**How to** add a client’s public SSH key to the Git-SSH server:
 
 Upload the key to the host’s volume mount point (on the client):
 
@@ -149,7 +179,7 @@ $ sudo docker restart git-ssh
 
 ## Basic usage
 
-How to
+**How to**
 * check that the container works and
 * list all repositories
 (on the client; the client’s SSH public key must have been uploaded to the host
@@ -165,7 +195,7 @@ interactive shell access is not provided.
 [...]
 ```
 
-How to create a new (bare) repository (on the host):
+**How to** create a new (bare) repository (on the host):
 
 ```sh
 $ sudo docker exec -u git git-ssh git init --bare ./repos/${REPO_NAME}.git
@@ -174,13 +204,13 @@ $ sudo docker exec -u git git-ssh git init --bare ./repos/${REPO_NAME}.git
 > Or with Docker-Compose:
 > `sudo docker-compose exec -u git git-ssh git init --bare ./repos/${REPO_NAME}.git`
 
-How to clone a repository (on the client):
+**How to** clone a repository (on the client):
 
 ```sh
 $ git clone ssh://git@${SERVER}:${GITSSH_PORT}/git/repos/${REPO_NAME}.git
 ```
 
-How to push a (non-bare) repository that (yet) only exists locally (on the
+**How to** push a (non-bare) repository that (yet) only exists locally (on the
 client):
 
 Prerequisite: Create a new (bare) repository (on the host).
@@ -198,7 +228,7 @@ $ git push -u origin master
 
 > Repeat the `git push [...]` command for all tracking branches ...
 
-How to upload an existing bare repository (on the client):
+**How to** upload an existing bare repository (on the client):
 
 ```sh
 $ scp -r /path/to/${REPO_NAME}.git \
@@ -211,7 +241,7 @@ $ scp -r /path/to/${REPO_NAME}.git \
 
 ## Troubleshooting
 
-How to fix Git repository access permission issues (on the host):
+**How to** fix Git repository access permission issues (on the host):
 
 ```sh
 $ sudo docker exec git-ssh ./fix-repos.sh

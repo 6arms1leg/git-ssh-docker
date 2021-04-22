@@ -1,6 +1,6 @@
 #!/bin/sh
 
-PROGNAME="Git SSH server"
+PROGNAME="Git-SSH server"
 PREPOS=/git/repos
 PCLONEURL="ssh://git@<SERVER>:<PORT>/git/repos/<REPO_NAME>.git"
 

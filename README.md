@@ -12,7 +12,7 @@ Within the Docker container all Git repositries are managed by a single `git`
 user, whos UID/GID is specified at container start.
 Normal (interactive shell) SSH access to the Docker host machine that runs the
 container is needed to add a new user/client (add an SSH public key) and create
-or delete Git reposities.
+or delete Git reposities.  
 The UML deployment diagram in the figure below gives an overview.
 
 ![UML deployment diagram](./uml-dd-deployment-overview.png "UML deployment diagram")
@@ -75,6 +75,15 @@ SSH key authentication.
 
 ^1: "Secure" here only means access restiction and encryption using SSH key
 authentication.
+
+## Requirements
+
+For basic usage (mandatory):
+* Docker
+
+For easy handling (recommended):
+* Docker-Compose
+* Make
 
 ## Makefile
 
@@ -150,8 +159,8 @@ $ sudo docker-compose up -d
 
 > Based on [this reference](https://www.ssh.com/ssh/keygen/).
 
-**How to** generate a private/public key pair (on the client; this generates
-stronger keys than the default, RSA):
+**How to** generate an SSH private/public key pair (on the client; this
+generates stronger keys than the default, RSA):
 
 ```sh
 $ ssh-keygen -t ecdsa -b 521
@@ -160,7 +169,7 @@ $ ssh-keygen -t ecdsa -b 521
 > Or if supported by the client:
 > `ssh-keygen -t ed25519`
 
-**How to** add a client’s public SSH key to the Git-SSH server:
+**How to** add a client’s SSH public key to the Git-SSH server:
 
 Upload the key to the host’s volume mount point (on the client):
 

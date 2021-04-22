@@ -18,11 +18,13 @@ COPY ./git-shell-commands/ ./git-shell-commands/
 
 COPY ./fix-repos.sh ./sshd_config ./
 COPY ./start.sh /
+COPY ./check.sh /
 RUN echo '' > /etc/motd && \
     chmod u+x \
         ./git-shell-commands/* \
         ./fix-repos.sh \
-        /start.sh && \
+        /start.sh \
+        /check.sh && \
     mkdir -p \
         ./.ssh/ \
         ./keys-host/ \
@@ -31,5 +33,7 @@ RUN echo '' > /etc/motd && \
 
 EXPOSE 22
 VOLUME ["/git/keys-host/", "/git/keys/", "/git/repos/"]
+
+HEALTHCHECK CMD sh /check.sh
 
 CMD ["sh", "/start.sh"]

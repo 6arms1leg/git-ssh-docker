@@ -48,9 +48,21 @@ fi
 # If public keys are present, copy them into the `authorized_keys` file
 if [ -n "$(ls -A ${PKEYS}/)" ]; then
     cat ${PKEYS}/*.pub > ${PHOME}/.ssh/authorized_keys
-    chown -R ${PUSR}:${PUSR} ${PHOME}/.ssh/
-    chmod 700 ${PHOME}/.ssh/
-    chmod -R 600 ${PHOME}/.ssh/*
+else
+    # If no public SSH keys are present, make the `authorized_keys` file empty.
+    # This is important for some corner cases of restarting the Docker
+    # container with no public SSH keys present.
+    cat '' > ${PHOME}/.ssh/authorized_keys
 fi
+
+# Generate an SSH key pair for Docker `HEALTHCHECK`
+rm -rf ${PHOME}/.ssh/id_ed25519*
+ssh-keygen -q -t ed25519 -N '' -f ${PHOME}/.ssh/id_ed25519
+cat ${PHOME}/.ssh/id_ed25519.pub >> ${PHOME}/.ssh/authorized_keys
+
+# Set correct access permissions for the files created in the previous steps
+chown -R ${PUSR}:${PUSR} ${PHOME}/.ssh/
+chmod 700 ${PHOME}/.ssh/
+chmod -R 600 ${PHOME}/.ssh/*
 
 exec ${PROG} -D -f ${PCONFIG}

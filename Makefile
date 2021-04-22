@@ -21,8 +21,8 @@ help:
        	| sort \
 	| egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
 
-build: git-shell-commands $(DOCKERFILE) .dockerignore fix-repos.sh sshd_config \
-	start.sh
+build: git-shell-commands check.sh $(DOCKERFILE) .dockerignore fix-repos.sh \
+	sshd_config start.sh
 	@echo "Dummy time stamp file for Make to determine when to rebuild" > $@
 	sudo docker build -t $(IMAGE):$(VERSION) $(BUILD_CONTEXT)/ \
 		-f $(DOCKERFILE)

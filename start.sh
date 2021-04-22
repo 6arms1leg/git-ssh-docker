@@ -36,7 +36,7 @@ adduser -D -h ${PHOME}/ -G ${PUSR} -u ${PUID} -s ${PSHELL} ${PUSR}
 echo "${PUSR}:dummyPassword" | chpasswd
 chown -R ${PUSR}:${PUSR} ${PHOME}/ > /dev/null 2>&1
 
-# If no host keys are present, generate them
+# If no SSH host key pairs are present, generate them
 if [ -z "$(ls -A ${PKEYSHOST}/)" ]; then
     mkdir -p ${PKEYSHOST}/etc/ssh/ && \
     ssh-keygen -A -f ./keys-host && \
@@ -45,13 +45,13 @@ if [ -z "$(ls -A ${PKEYSHOST}/)" ]; then
     chown -R ${PUSR}:${PUSR} ${PKEYSHOST}/
 fi
 
-# If public keys are present, copy them into the `authorized_keys` file
+# If SSH public keys are present, copy them into the `authorized_keys` file
 if [ -n "$(ls -A ${PKEYS}/)" ]; then
     cat ${PKEYS}/*.pub > ${PHOME}/.ssh/authorized_keys
 else
-    # If no public SSH keys are present, make the `authorized_keys` file empty.
+    # If no SSH public keys are present, make the `authorized_keys` file empty.
     # This is important for some corner cases of restarting the Docker
-    # container with no public SSH keys present.
+    # container with no SSH public keys present.
     cat '' > ${PHOME}/.ssh/authorized_keys
 fi
 
@@ -65,4 +65,5 @@ chown -R ${PUSR}:${PUSR} ${PHOME}/.ssh/
 chmod 700 ${PHOME}/.ssh/
 chmod -R 600 ${PHOME}/.ssh/*
 
+# Start the service
 exec ${PROG} -D -f ${PCONFIG}

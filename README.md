@@ -253,8 +253,8 @@ $ scp -r /path/to/${REPO_NAME}.git \
 **How to** fix Git repository access permission issues (on the host):
 
 ```sh
-$ sudo docker exec git-ssh ./fix-repos.sh
+$ sudo docker exec git-ssh sh ./fix-repos.sh
 ```
 
 > Or with Docker-Compose:
-> `sudo docker-compose exec git-ssh ./fix-repos.sh`
+> `sudo docker-compose exec git-ssh sh ./fix-repos.sh`

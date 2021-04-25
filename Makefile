@@ -96,7 +96,8 @@ else
 endif
 
 fix-repos:
-	sudo docker-compose -f $(DOCKERCOMPFILE) exec $(SERVICE) ./fix-repos.sh
+	sudo docker-compose -f $(DOCKERCOMPFILE) exec $(SERVICE) \
+		sh ./fix-repos.sh
 
 clean:
 	rm -rf $(BUILD_CONTEXT)/build

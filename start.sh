@@ -27,6 +27,16 @@ if [ "${PGID}" -lt "${ID_MIN_ALLOWED}" ]; then
     exit 1 # Fail
 fi
 
+# If `git` user/group already exist, delete them so recreating them (see next
+# step) does not result in failures.
+# This is relevant, e.g., when the Docker container is restarted.
+if [ -n "$(getent passwd ${PUSR})" ]; then
+    deluser ${PUSR}
+fi
+if [ -n "$(getent group ${PUSR})" ]; then
+    delgroup ${PUSR}
+fi
+
 # Create user with provided UID:GID and git-shell, which provides restricted
 # Git access.
 # It permits execution only of server-side Git commands implementing the

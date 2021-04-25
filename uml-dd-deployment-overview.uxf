@@ -5,25 +5,26 @@
     <id>UMLDeployment</id>
     <coordinates>
       <x>423</x>
-      <y>171</y>
+      <y>144</y>
       <w>225</w>
-      <h>441</h>
+      <h>459</h>
     </coordinates>
     <panel_attributes>&lt;&lt;execution environment&gt;&gt;
 *Git-SSH*
 *Docker Container*
-{orchestration = Docker Compose}
 {OS = Alpine Linux edge}
 {network port = 22/tcp}
 {SSHD exec. as = root}
-{Git exec. as = git}</panel_attributes>
+{Git exec. as = git}
+{orchestration = Docker Compose}
+{health check = true}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLNote</id>
     <coordinates>
       <x>828</x>
-      <y>459</y>
+      <y>450</y>
       <w>108</w>
       <h>36</h>
     </coordinates>
@@ -35,7 +36,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>747</x>
-      <y>423</y>
+      <y>414</y>
       <w>99</w>
       <h>72</h>
     </coordinates>
@@ -61,7 +62,7 @@ layer=1</panel_attributes>
       <x>189</x>
       <y>36</y>
       <w>828</w>
-      <h>612</h>
+      <h>603</h>
     </coordinates>
     <panel_attributes>dd Deployment Overview
 Git-SSH (Docker)
@@ -72,7 +73,7 @@ fontsize=30</panel_attributes>
     <id>UMLDeployment</id>
     <coordinates>
       <x>441</x>
-      <y>315</y>
+      <y>306</y>
       <w>180</w>
       <h>81</h>
     </coordinates>
@@ -88,7 +89,7 @@ fontsize=30</panel_attributes>
       <x>405</x>
       <y>117</y>
       <w>594</w>
-      <h>513</h>
+      <h>504</h>
     </coordinates>
     <panel_attributes>&lt;&lt;device&gt;&gt;
 *Host Maschine*</panel_attributes>
@@ -122,7 +123,7 @@ SSH</panel_attributes>
     <id>UMLDeployment</id>
     <coordinates>
       <x>666</x>
-      <y>261</y>
+      <y>252</y>
       <w>144</w>
       <h>207</h>
     </coordinates>
@@ -135,7 +136,7 @@ SSH</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>684</x>
-      <y>324</y>
+      <y>315</y>
       <w>99</w>
       <h>36</h>
     </coordinates>
@@ -147,7 +148,7 @@ SSH</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>684</x>
-      <y>369</y>
+      <y>360</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -159,7 +160,7 @@ SSH</panel_attributes>
     <id>UMLGeneric</id>
     <coordinates>
       <x>684</x>
-      <y>414</y>
+      <y>405</y>
       <w>72</w>
       <h>36</h>
     </coordinates>
@@ -171,7 +172,7 @@ SSH</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>639</x>
-      <y>279</y>
+      <y>270</y>
       <w>45</w>
       <h>27</h>
     </coordinates>
@@ -182,7 +183,7 @@ SSH</panel_attributes>
     <id>UMLDeployment</id>
     <coordinates>
       <x>441</x>
-      <y>513</y>
+      <y>504</y>
       <w>162</w>
       <h>81</h>
     </coordinates>
@@ -231,7 +232,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>747</x>
-      <y>378</y>
+      <y>369</y>
       <w>99</w>
       <h>36</h>
     </coordinates>
@@ -242,7 +243,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>774</x>
-      <y>297</y>
+      <y>288</y>
       <w>72</w>
       <h>63</h>
     </coordinates>
@@ -253,7 +254,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>594</x>
-      <y>441</y>
+      <y>432</y>
       <w>126</w>
       <h>108</h>
     </coordinates>
@@ -264,7 +265,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>612</x>
-      <y>360</y>
+      <y>351</y>
       <w>90</w>
       <h>45</h>
     </coordinates>
@@ -275,7 +276,7 @@ style=wordwrap</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>612</x>
-      <y>333</y>
+      <y>324</y>
       <w>90</w>
       <h>27</h>
     </coordinates>
@@ -319,7 +320,7 @@ style=wordwrap</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>828</x>
-      <y>342</y>
+      <y>333</y>
       <w>144</w>
       <h>99</h>
     </coordinates>
@@ -332,7 +333,7 @@ style=wordwrap</panel_attributes>
     <id>UMLNote</id>
     <coordinates>
       <x>828</x>
-      <y>243</y>
+      <y>234</y>
       <w>126</w>
       <h>81</h>
     </coordinates>
@@ -370,7 +371,7 @@ r1=SSH\nvia\n${GITSSH_PORT}</panel_attributes>
     <id>UMLDeployment</id>
     <coordinates>
       <x>441</x>
-      <y>414</y>
+      <y>405</y>
       <w>162</w>
       <h>81</h>
     </coordinates>

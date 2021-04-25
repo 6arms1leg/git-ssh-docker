@@ -37,7 +37,7 @@ tag:
 ifeq ($(origin t),undefined)
 	@echo "Make:  No tag provided, \`$(VERSION)\` is used as default."
 	@echo "Make:      You can provide a custom tag via variable \`t\`"
-	@echo "Make:      (\`make tag t=<TAG>\`)."
+	@echo "Make:      (\`make $@ t=<TAG>\`)."
 	sudo docker image tag $(IMAGE):latest $(IMAGE):$(VERSION)
 else
 	sudo docker image tag $(IMAGE):latest $(IMAGE):$(t)
@@ -93,7 +93,7 @@ new-repo:
 # Only continue if variable `r` is defined
 ifeq ($(origin r),undefined)
 	@echo "Make:  Please provide a repository name via variable \`r\`"
-	@echo "Make:      (\`make new-repo r=<REPO_NAME>\`)."
+	@echo "Make:      (\`make $@ r=<REPO_NAME>\`)."
 else
 	sudo docker-compose -f $(DOCKERCOMPFILE) exec -u $(USER) $(SERVICE) \
 		git init --bare ./repos/$(r).git

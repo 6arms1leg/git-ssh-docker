@@ -69,4 +69,8 @@ chmod 700 ${PHOME}/.ssh/
 chmod -R 600 ${PHOME}/.ssh/*
 
 # Start the service
+# Running SSHD as (unprivileged) normal user *does not* provide better security.
+# In fact, running SSHD the "default way" (invoked by `root` user) might be
+# more secure.
+# [More info](https://security.stackexchange.com/questions/180471/what-are-the-disadvantages-of-running-ssh-daemon-without-root)
 exec ${PROG} -D -f ${PCONFIG}

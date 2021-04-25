@@ -3,6 +3,7 @@
 PROGNAME="Git-SSH server"
 PREPOS=/git/repos
 PCLONEURL="ssh://git@<SERVER>:<PORT>/git/repos/<REPO_NAME>.git"
+EXIT_CODE=128
 
 printf '%s\n' "~~~ Welcome to ${PROGNAME}! ~~~"
 printf '\n'
@@ -23,4 +24,4 @@ printf '\n'
 printf '%s\n' "~~~ Bye! ~~~"
 printf '\n'
 
-exit 128
+exit ${EXIT_CODE}

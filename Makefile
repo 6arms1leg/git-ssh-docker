@@ -9,6 +9,10 @@ BUILD_CONTEXT := .
 DOCKERFILE := $(BUILD_CONTEXT)/Dockerfile
 DOCKERCOMPFILE := $(BUILD_CONTEXT)/docker-compose.yml
 
+# Time in seconds for Docker Compose to wait before stopping/downing the Docker
+# container
+TIMEOUT := 1
+
 .PHONY: help tag prepare-deploy run-shell up start stop down destroy restart \
 	ps log login-shell login-shell-root new-repo fix-repos clean
 
@@ -61,16 +65,16 @@ start:
 	sudo docker-compose -f $(DOCKERCOMPFILE) start
 
 stop:
-	sudo docker-compose -f $(DOCKERCOMPFILE) stop -t 1
+	sudo docker-compose -f $(DOCKERCOMPFILE) stop -t $(TIMEOUT)
 
 down:
-	sudo docker-compose -f $(DOCKERCOMPFILE) down -t 1
+	sudo docker-compose -f $(DOCKERCOMPFILE) down -t $(TIMEOUT)
 
 destroy:
-	sudo docker-compose -f $(DOCKERCOMPFILE) down -t 1 -v
+	sudo docker-compose -f $(DOCKERCOMPFILE) down -t $(TIMEOUT) -v
 
 restart:
-	sudo docker-compose -f $(DOCKERCOMPFILE) stop -t 1
+	sudo docker-compose -f $(DOCKERCOMPFILE) stop -t $(TIMEOUT)
 	sudo docker-compose -f $(DOCKERCOMPFILE) up -d
 
 ps:

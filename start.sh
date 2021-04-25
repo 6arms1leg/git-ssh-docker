@@ -9,19 +9,22 @@ PKEYSHOST=${PHOME}/keys-host
 PKEYS=${PHOME}/keys
 PREPOS=${PHOME}/repos
 
+# Minimum UID/GID allowed
+ID_MIN_ALLOWED=1000
+
 # Print UID and GID for confirmation
-echo PUID:${PUID}
-echo PGID:${PGID}
+echo "PUID:${PUID}"
+echo "PGID:${PGID}"
 
 # Sanity check on UID/GID
-if [ "${PUID}" -lt "1000" ]; then
-    echo PUID cannot be \< 1000
-    exit 1
+if [ "${PUID}" -lt "${ID_MIN_ALLOWED}" ]; then
+    echo "PUID cannot be \< ${ID_MIN_ALLOWED}"
+    exit 1 # Fail
 fi
 
-if [ "${PGID}" -lt "1000" ]; then
-    echo PGID cannot be \< 1000
-    exit 1
+if [ "${PGID}" -lt "${ID_MIN_ALLOWED}" ]; then
+    echo "PGID cannot be \< ${ID_MIN_ALLOWED}"
+    exit 1 # Fail
 fi
 
 # Create user with provided UID:GID and git-shell, which provides restricted

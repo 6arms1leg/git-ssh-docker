@@ -22,22 +22,22 @@ The UML deployment diagram in the figure below gives an overview.
 > * Host - Host machine that runs the Docker container
 
 > Used variables in this documentation:
-> * GITSSH_BASE_PATH - Path to the directory that contains this project’s files
->   (especially `Dockerfile` + other build-related files and
+> * `GITSSH_BASE_PATH` - Path to the directory that contains this project’s
+>   files (especially `Dockerfile` + other build-related files and
 >   `docker-compose.yml`)
-> * GITSSH_GID - GID assigned to the `git` user within the Docker container,
+> * `GITSSH_GID` - GID assigned to the `git` user within the Docker container,
 >   e.g. `1000`.
 >   The access permissions of the Docker volumes content will be set to this
 >   GID.
-> * GITSSH_PORT - Network port used for the Git SSH connection, e.g. `2222`
-> * REPO_NAME - Name of the Git repository
-> * SERVER - Network address (IP/domain name) of the host
-> * GITSSH_UID - UID assigned to the `git` user within the Docker container,
+> * `GITSSH_UID` - UID assigned to the `git` user within the Docker container,
 >   e.g. `1000`.
 >   The acces spermissions of the Docker volumes content will be set to this
 >   UID.
-> * USER - SSH user used to login to the host
-> * VERSION - Version of this project, e.g. `1.0.0`.
+> * `GITSSH_PORT` - Network port used for the Git SSH connection, e.g. `2222`
+> * `REPO_NAME` - Name of the Git repository
+> * `SERVER` - Network address (IP/domain name) of the host
+> * `USER` - SSH user used to login to the host
+> * `VERSION` - Version of this project, e.g. `1.0.0`.
 >   Adheres to [Semantic Versioning](https://semver.org).
 
 ## Quickstart
@@ -82,17 +82,17 @@ For basic usage (mandatory):
 * Docker
 
 For easy handling (recommended):
-* Docker-Compose
+* Docker Compose
 * Make
 
 ## Makefile
 
 Most of the instructions in this documentation can also be run with the
-provided `Makefile` (which uses Docker-Compose).
+provided `Makefile` (which uses Docker Compose).
 Run `cd ${GITSSH_BASE_PATH} && make help` to see the list of available targets.
 
-> The Makefile uses Docker-Compose, see the prerequisite in "How to run the
-> container with Docker-Compose (on the host)" in the [Run section](#run).
+> The Makefile uses Docker Compose, see the prerequisite in "How to run the
+> container with Docker Compose (on the host)" in the [Run section](#run).
 
 ## Build
 
@@ -106,14 +106,14 @@ $ sudo docker image tag git-ssh:${VERSION} git-ssh:latest
 
 ## Arguments
 
-* Exposed port: 22
+* Exposed port: `22`
 * Volumes:
-    * /git/keys-host: Volume to store the SSHD host keys
-    * /git/keys: Volume to store the users’ public keys
-    * /git/repos: Volume to store the Git repositories
+    * `/git/keys-host`: Volume to store the SSHD host keys
+    * `/git/keys`: Volume to store the users’ public keys
+    * `/git/repos`: Volume to store the Git repositories
 * Environment variables:
-    * PUID: UID that is assigned to the `git` user inside the Docker container
-    * PGID: GID that is assigned to the `git` user inside the Docker container
+    * `PUID`: UID that is assigned to the `git` user inside the Docker container
+    * `PGID`: GID that is assigned to the `git` user inside the Docker container
 
 ## Run
 
@@ -134,7 +134,7 @@ $ sudo docker run \
   git-ssh:latest
 ```
 
-**How to** run the container with Docker-Compose (on the host):
+**How to** run the container with Docker Compose (on the host):
 
 Prerequisite:
 Copy `docker-compose.yml.template` to `docker-compose.yml` and adjust it.
@@ -183,7 +183,7 @@ Restart the Docker container (on the host):
 $ sudo docker restart git-ssh
 ```
 
-> Or with Docker-Compose:
+> Or with Docker Compose:
 > `sudo docker-compose down -t 1 && sudo docker-compose up -d`
 
 ## Basic usage
@@ -210,7 +210,7 @@ interactive shell access is not provided.
 $ sudo docker exec -u git git-ssh git init --bare ./repos/${REPO_NAME}.git
 ```
 
-> Or with Docker-Compose:
+> Or with Docker Compose:
 > `sudo docker-compose exec -u git git-ssh git init --bare ./repos/${REPO_NAME}.git`
 
 **How to** clone a repository (on the client):
@@ -256,5 +256,5 @@ $ scp -r /path/to/${REPO_NAME}.git \
 $ sudo docker exec git-ssh sh ./fix-repos.sh
 ```
 
-> Or with Docker-Compose:
+> Or with Docker Compose:
 > `sudo docker-compose exec git-ssh sh ./fix-repos.sh`

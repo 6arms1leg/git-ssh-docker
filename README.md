@@ -200,7 +200,7 @@ $ sudo docker restart git-ssh
 $ ssh -p ${GITSSH_PORT} git@${SERVER}
 
 ~~~ Welcome to Git-SSH server! ~~~
-
+[...]
 You have successfully authenticated but
 interactive shell access is not provided.
 [...]

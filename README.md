@@ -117,7 +117,7 @@ $ sudo docker image tag git-ssh:${VERSION} git-ssh:latest
 
 ## Run
 
-**How to** run the container (on the host):
+**How to** run the Docker container (on the host):
 
 ```sh
 $ cd ${GITSSH_BASE_PATH}
@@ -159,8 +159,9 @@ $ sudo docker-compose up -d
 
 > Based on [this reference](https://www.ssh.com/ssh/keygen/).
 
-**How to** generate an SSH private/public key pair (on the client; this
-generates stronger keys than the default, RSA):
+**How to** generate an SSH private/public key pair (on the client):
+
+> This generates stronger keys than the default, RSA.
 
 ```sh
 $ ssh-keygen -t ecdsa -b 521
@@ -189,10 +190,11 @@ $ sudo docker restart git-ssh
 ## Basic usage
 
 **How to**
-* check that the container works and
+* check that the Docker container works and
 * list all repositories
-(on the client; the client’s SSH public key must have been uploaded to the host
-already):
+(on the client):
+
+> The client’s SSH public key must have been uploaded to the host already.
 
 ```sh
 $ ssh -p ${GITSSH_PORT} git@${SERVER}

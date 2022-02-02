@@ -1,5 +1,5 @@
 # Adheres to [Semantic Versioning](https://semver.org)
-VERSION := 1.1.0-dev
+VERSION := 1.1.1
 
 IMAGE := git-ssh
 SERVICE := git-ssh

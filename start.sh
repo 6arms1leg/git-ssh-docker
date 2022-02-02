@@ -65,7 +65,7 @@ else
     # If no SSH public keys are present, make the `authorized_keys` file empty.
     # This is important for some corner cases of restarting the Docker
     # container with no SSH public keys present.
-    cat '' > ${PHOME}/.ssh/authorized_keys
+    echo '' > ${PHOME}/.ssh/authorized_keys
 fi
 
 # Generate an SSH key pair for Docker `HEALTHCHECK`
